@@ -3,88 +3,47 @@ import 'dart:convert';
 import 'package:clean_arquicture/feature/register/domain/entities/cat_entity.dart';
 
 class CatModel extends CatEntity {
-  final Weight weight;
-  final String id;
-  final String name;
-  final String? cfaUrl;
-  final String? vetstreetUrl;
-  final String? vcahospitalsUrl;
-  final String temperament;
-  final String origin;
-  final String countryCodes;
-  final String countryCode;
-  final String description;
-  final String lifeSpan;
-  final int indoor;
-  final int? lap;
-  final String? altNames;
-  final int adaptability;
-  final int affectionLevel;
-  final int childFriendly;
-  final int dogFriendly;
-  final int energyLevel;
-  final int grooming;
-  final int healthIssues;
-  final int intelligence;
-  final int sheddingLevel;
-  final int socialNeeds;
-  final int strangerFriendly;
-  final int vocalisation;
-  final int experimental;
-  final int hairless;
-  final int natural;
-  final int rare;
-  final int rex;
-  final int suppressedTail;
-  final int shortLegs;
-  final String? wikipediaUrl;
-  final int hypoallergenic;
-  final String? referenceImageId;
-  final int? catFriendly;
-  final int? bidability;
-  final String? imageUrl;
-
   CatModel({
-    required this.weight,
-    required this.id,
-    required this.name,
-    this.cfaUrl,
-    this.vetstreetUrl,
-    this.vcahospitalsUrl,
-    required this.temperament,
-    required this.origin,
-    required this.countryCodes,
-    required this.countryCode,
-    required this.description,
-    required this.lifeSpan,
-    required this.indoor,
-    this.lap,
-    this.altNames,
-    required this.adaptability,
-    required this.affectionLevel,
-    required this.childFriendly,
-    required this.dogFriendly,
-    required this.energyLevel,
-    required this.grooming,
-    required this.healthIssues,
-    required this.intelligence,
-    required this.sheddingLevel,
-    required this.socialNeeds,
-    required this.strangerFriendly,
-    required this.vocalisation,
-    required this.experimental,
-    required this.hairless,
-    required this.natural,
-    required this.rare,
-    required this.rex,
-    required this.suppressedTail,
-    required this.shortLegs,
-    this.wikipediaUrl,
-    required this.hypoallergenic,
-    this.referenceImageId,
-    this.catFriendly,
-    this.bidability,
-    this.imageUrl,
+    required Weight weight,
+    required String id,
+    required String name,
+    String? cfaUrl,
+    String? vetstreetUrl,
+    String? vcahospitalsUrl,
+    required String temperament,
+    required String origin,
+    required String countryCodes,
+    required String countryCode,
+    required String description,
+    required String lifeSpan,
+    required int indoor,
+    int? lap,
+    String? altNames,
+    required int adaptability,
+    required int affectionLevel,
+    required int childFriendly,
+    required int dogFriendly,
+    required int energyLevel,
+    required int grooming,
+    required int healthIssues,
+    required int intelligence,
+    required int sheddingLevel,
+    required int socialNeeds,
+    required int strangerFriendly,
+    required int vocalisation,
+    required int experimental,
+    required int hairless,
+    required int natural,
+    required int rare,
+    required int rex,
+    required int suppressedTail,
+    required int shortLegs,
+    String? wikipediaUrl,
+    required int hypoallergenic,
+    String? referenceImageId,
+    int? catFriendly,
+    int? bidability,
+    String? imageUrl,
   }) : super(
           id: id,
           name: name,
@@ -125,6 +84,7 @@ class CatModel extends CatEntity {
           catFriendly: catFriendly,
           bidability: bidability,
           imageUrl: imageUrl,
+          weight: weight,
         );
 
   factory CatModel.fromJson(String str) => CatModel.fromMap(json.decode(str));
@@ -174,7 +134,6 @@ class CatModel extends CatEntity {
   );
 
   Map<String, dynamic> toMap() => {
-    "weight": weight.toMap(),
     "id": id,
     "name": name,
     "cfa_url": cfaUrl,
@@ -214,99 +173,10 @@ class CatModel extends CatEntity {
     "cat_friendly": catFriendly,
     "bidability": bidability,
   };
-
-  CatModel copyWith({
-    Weight? weight,
-    String? id,
-    String? name,
-    String? cfaUrl,
-    String? vetstreetUrl,
-    String? vcahospitalsUrl,
-    String? temperament,
-    String? origin,
-    String? countryCodes,
-    String? countryCode,
-    String? description,
-    String? lifeSpan,
-    int? indoor,
-    int? lap,
-    String? altNames,
-    int? adaptability,
-    int? affectionLevel,
-    int? childFriendly,
-    int? dogFriendly,
-    int? energyLevel,
-    int? grooming,
-    int? healthIssues,
-    int? intelligence,
-    int? sheddingLevel,
-    int? socialNeeds,
-    int? strangerFriendly,
-    int? vocalisation,
-    int? experimental,
-    int? hairless,
-    int? natural,
-    int? rare,
-    int? rex,
-    int? suppressedTail,
-    int? shortLegs,
-    String? wikipediaUrl,
-    int? hypoallergenic,
-    String? referenceImageId,
-    int? catFriendly,
-    int? bidability,
-    String? imageUrl,
-  }) {
-    return CatModel(
-      weight: weight ?? this.weight,
-      id: id ?? this.id,
-      name: name ?? this.name,
-      cfaUrl: cfaUrl ?? this.cfaUrl,
-      vetstreetUrl: vetstreetUrl ?? this.vetstreetUrl,
-      vcahospitalsUrl: vcahospitalsUrl ?? this.vcahospitalsUrl,
-      temperament: temperament ?? this.temperament,
-      origin: origin ?? this.origin,
-      countryCodes: countryCodes ?? this.countryCodes,
-      countryCode: countryCode ?? this.countryCode,
-      description: description ?? this.description,
-      lifeSpan: lifeSpan ?? this.lifeSpan,
-      indoor: indoor ?? this.indoor,
-      lap: lap ?? this.lap,
-      altNames: altNames ?? this.altNames,
-      adaptability: adaptability ?? this.adaptability,
-      affectionLevel: affectionLevel ?? this.affectionLevel,
-      childFriendly: childFriendly ?? this.childFriendly,
-      dogFriendly: dogFriendly ?? this.dogFriendly,
-      energyLevel: energyLevel ?? this.energyLevel,
-      grooming: grooming ?? this.grooming,
-      healthIssues: healthIssues ?? this.healthIssues,
-      intelligence: intelligence ?? this.intelligence,
-      sheddingLevel: sheddingLevel ?? this.sheddingLevel,
-      socialNeeds: socialNeeds ?? this.socialNeeds,
-      strangerFriendly: strangerFriendly ?? this.strangerFriendly,
-      vocalisation: vocalisation ?? this.vocalisation,
-      experimental: experimental ?? this.experimental,
-      hairless: hairless ?? this.hairless,
-      natural: natural ?? this.natural,
-      rare: rare ?? this.rare,
-      rex: rex ?? this.rex,
-      suppressedTail: suppressedTail ?? this.suppressedTail,
-      shortLegs: shortLegs ?? this.shortLegs,
-      wikipediaUrl: wikipediaUrl ?? this.wikipediaUrl,
-      hypoallergenic: hypoallergenic ?? this.hypoallergenic,
-      referenceImageId: referenceImageId ?? this.referenceImageId,
-      catFriendly: catFriendly ?? this.catFriendly,
-      bidability: bidability ?? this.bidability,
-      imageUrl: imageUrl ?? this.imageUrl,
-    );
-  }
 }
 
-class Weight {
-  final String imperial;
-  final String metric;
-
-  Weight({required this.imperial, required this.metric});
+class Weight extends WeightEntity {
+  Weight({required super.imperial, required super.metric});
 
   factory Weight.fromJson(String str) => Weight.fromMap(json.decode(str));
 

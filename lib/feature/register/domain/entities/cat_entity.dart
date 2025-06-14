@@ -38,6 +38,7 @@ class CatEntity {
   final int? catFriendly;
   final int? bidability;
   final String? imageUrl;
+  final WeightEntity weight;
 
   CatEntity({
     required this.id,
@@ -79,6 +80,7 @@ class CatEntity {
     this.catFriendly,
     this.bidability,
     this.imageUrl,
+    required this.weight,
   });
 
 
@@ -122,6 +124,7 @@ class CatEntity {
     int? catFriendly,
     int? bidability,
     String? imageUrl,
+    WeightEntity? weight,
   }) {
     return CatEntity(
       id: id ?? this.id,
@@ -162,18 +165,29 @@ class CatEntity {
       referenceImageId: referenceImageId ?? this.referenceImageId,
       catFriendly: catFriendly ?? this.catFriendly,
       bidability: bidability ?? this.bidability,
-      imageUrl: imageUrl ?? this.imageUrl,
+      imageUrl: imageUrl ?? this.imageUrl, 
+      weight: weight ?? this.weight,
     );
   }
 }
 
-class Weight {
+class WeightEntity {
     final String imperial;
     final String metric;
 
-    Weight({
+    WeightEntity({
         required this.imperial,
         required this.metric,
     });
 
+
+  WeightEntity copyWith({
+    String? imperial,
+    String? metric,
+  }) {
+    return WeightEntity(
+      imperial: imperial ?? this.imperial,
+      metric: metric ?? this.metric,
+    );
+  }
 }
